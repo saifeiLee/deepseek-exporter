@@ -1,6 +1,8 @@
 // Import html2canvas
 import html2canvas from 'html2canvas';
 
+const conversationSelector = '.dad65929';
+
 // Main function to initialize the extension
 function initDeepseekExporter() {
   console.log('DeepSeek Exporter initialized');
@@ -29,7 +31,7 @@ function addExportButton() {
   // Wait for the chat interface to load
   const checkInterval = setInterval(() => {
     // Look for the main chat container
-    const chatContainer = document.querySelector('.overflow-y-auto.flex-1');
+    const chatContainer = document.querySelector(conversationSelector);
     
     if (chatContainer) {
       clearInterval(checkInterval);
@@ -52,7 +54,7 @@ function addExportButton() {
       });
       
       // Find a suitable place to add the button
-      const headerElement = document.querySelector('header');
+      const headerElement = document.querySelector('.be88ba8a');
       if (headerElement) {
         headerElement.appendChild(exportButton);
       } else {
@@ -70,7 +72,7 @@ async function exportConversation() {
     // Find the conversation container
     // Try different selectors that might match the conversation container
     const selectors = [
-      '.dad65929', // The selector from the original code
+      conversationSelector,
     ];
     
     let conversationContainer = null;
