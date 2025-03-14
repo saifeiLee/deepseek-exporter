@@ -1,0 +1,20 @@
+{
+  "extension": {
+    "name": "DeepSeek 导出工具",
+    "description": "将 DeepSeek 对话导出为图片"
+  },
+  "popup": {
+    "title": "DeepSeek 导出工具",
+    "description": "将您的 DeepSeek 对话导出为图片",
+    "exportButton": "导出当前对话",
+    "exporting": "正在导出对话...",
+    "success": "对话导出成功！",
+    "error": "错误：{{message}}"
+  },
+  "content": {
+    "exportButton": "导出为图片",
+    "loading": "导出中...",
+    "downloadButton": "下载",
+    "closeButton": "关闭"
+  }
+} 

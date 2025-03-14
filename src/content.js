@@ -1,5 +1,7 @@
 // Import html2canvas
 import html2canvas from 'html2canvas';
+// Import i18n
+import i18n from './i18n';
 
 const conversationSelector = '.dad65929';
 
@@ -45,7 +47,7 @@ function addExportButton() {
           <polyline points="7 10 12 15 17 10"></polyline>
           <line x1="12" y1="15" x2="12" y2="3"></line>
         </svg>
-        Export as Image
+        ${i18n.t('content.exportButton')}
       `;
       
       // Add click event listener
@@ -96,7 +98,6 @@ async function exportConversation() {
     document.body.appendChild(loadingIndicator);
     
     try {
-      console.log('html2canvas:', html2canvas);
       // Capture the conversation
       const canvas = await html2canvas(conversationContainer, {
         backgroundColor: '#ffffff',
@@ -132,72 +133,70 @@ async function exportConversation() {
 
 // Function to create a loading indicator
 function createLoadingIndicator() {
-  const loadingDiv = document.createElement('div');
-  loadingDiv.style.position = 'fixed';
-  loadingDiv.style.top = '0';
-  loadingDiv.style.left = '0';
-  loadingDiv.style.width = '100%';
-  loadingDiv.style.height = '100%';
-  loadingDiv.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-  loadingDiv.style.display = 'flex';
-  loadingDiv.style.justifyContent = 'center';
-  loadingDiv.style.alignItems = 'center';
-  loadingDiv.style.zIndex = '10000';
-  
-  const spinner = document.createElement('div');
-  spinner.style.border = '5px solid #f3f3f3';
-  spinner.style.borderTop = '5px solid #3498db';
-  spinner.style.borderRadius = '50%';
-  spinner.style.width = '50px';
-  spinner.style.height = '50px';
-  spinner.style.animation = 'spin 2s linear infinite';
-  
-  const style = document.createElement('style');
-  style.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
-  
-  document.head.appendChild(style);
-  loadingDiv.appendChild(spinner);
-  
-  return loadingDiv;
+  const loadingContainer = document.createElement('div');
+  loadingContainer.className = 'deepseek-export-loading';
+  loadingContainer.innerHTML = `
+    <div class="deepseek-export-loading-spinner"></div>
+    <div class="deepseek-export-loading-text">${i18n.t('content.loading')}</div>
+  `;
+  return loadingContainer;
 }
 
-// Function to show image preview with download option
+// Function to show the image preview
 function showImagePreview(canvas) {
-  // Create container
-  const container = document.createElement('div');
-  container.className = 'deepseek-export-container';
+  // Create a container for the preview
+  const previewContainer = document.createElement('div');
+  previewContainer.className = 'deepseek-export-preview';
   
+  // Create the preview content
+  previewContainer.innerHTML = `
+    <div class="deepseek-export-preview-content">
+      <div class="deepseek-export-preview-header">
+        <h2>DeepSeek Exporter</h2>
+        <button class="deepseek-export-preview-close">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <div class="deepseek-export-preview-image-container"></div>
+      <div class="deepseek-export-preview-actions">
+        <button class="deepseek-export-preview-download">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          ${i18n.t('content.downloadButton')}
+        </button>
+      </div>
+    </div>
+  `;
+
+  // Add event listener to close button
+  const closeButton = previewContainer.querySelector('.deepseek-export-preview-close');
+  closeButton.addEventListener('click', () => {
+    document.body.removeChild(previewContainer);
+  });
+  closeButton.setAttribute('title', i18n.t('content.closeButton'));
+
   // Add the canvas as an image
   const img = document.createElement('img');
   img.src = canvas.toDataURL('image/png');
-  img.className = 'deepseek-export-preview';
-  container.appendChild(img);
+  img.className = 'deepseek-export-preview-image';
+  previewContainer.querySelector('.deepseek-export-preview-image-container').appendChild(img);
   
-  // Add controls
-  const controls = document.createElement('div');
-  controls.className = 'deepseek-export-controls';
-  
-  // Download button
-  const downloadBtn = document.createElement('button');
-  downloadBtn.textContent = 'Download';
+  // Add event listener to download button
+  const downloadBtn = previewContainer.querySelector('.deepseek-export-preview-download');
   downloadBtn.addEventListener('click', () => {
     const link = document.createElement('a');
     link.download = `deepseek-conversation-${new Date().toISOString().slice(0, 10)}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
   });
-  controls.appendChild(downloadBtn);
   
-  // Close button
-  const closeBtn = document.createElement('button');
-  closeBtn.textContent = 'Close';
-  closeBtn.addEventListener('click', () => {
-    document.body.removeChild(container);
-  });
-  controls.appendChild(closeBtn);
-  
-  container.appendChild(controls);
-  document.body.appendChild(container);
+  document.body.appendChild(previewContainer);
 }
 
 // Initialize the extension

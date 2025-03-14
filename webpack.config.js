@@ -1,5 +1,22 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
+const { exec } = require('child_process');
+
+// Custom plugin to run the manifest generation script
+class GenerateManifestPlugin {
+  apply(compiler) {
+    compiler.hooks.beforeRun.tapAsync('GenerateManifestPlugin', (compilation, callback) => {
+      exec('node src/generate-manifest.js', (error, stdout, stderr) => {
+        if (error) {
+          console.error(`Error generating manifest: ${error}`);
+          return callback(error);
+        }
+        console.log(stdout);
+        callback();
+      });
+    });
+  }
+}
 
 module.exports = {
   mode: 'production',
@@ -30,9 +47,9 @@ module.exports = {
     ],
   },
   plugins: [
+    new GenerateManifestPlugin(),
     new CopyPlugin({
       patterns: [
-        { from: 'manifest.json', to: 'manifest.json' },
         { from: 'popup.html', to: 'popup.html' },
         { from: 'popup.css', to: 'popup.css' },
         { from: 'content.css', to: 'content.css' },
