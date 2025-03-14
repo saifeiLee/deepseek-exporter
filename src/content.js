@@ -104,7 +104,9 @@ async function exportConversation() {
         allowTaint: true,
         scrollX: 0,
         scrollY: 0,
-        width: 1000,
+        width: conversationContainer.offsetWidth,
+        x: -20,
+        windowWidth: conversationContainer.offsetWidth + 40,
       });
       
       // Remove loading indicator
