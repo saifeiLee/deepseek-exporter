@@ -1,0 +1,20 @@
+{
+  "name": "deepseek-exporter",
+  "version": "1.0.0",
+  "description": "Chrome extension to export Deepseek conversations as images",
+  "main": "content.js",
+  "scripts": {
+    "convert-icons": "node convert.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "deepseek",
+    "export",
+    "image"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "sharp": "^0.33.2"
+  }
+} 
