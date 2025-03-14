@@ -70,15 +70,7 @@ async function exportConversation() {
     // Find the conversation container
     // Try different selectors that might match the conversation container
     const selectors = [
-      '.a5cd95be', // The selector from the original code
-      '.overflow-y-auto.flex-1', // A more generic selector
-      '[role="main"]', // Main content area
-      '.chat-container', // Common class for chat containers
-      '#chat-container', // Common ID for chat containers
-      '.conversation-container', // Another common class
-      'main', // Fallback to the main element
-      'div[class*="conversation"]', // Any div with "conversation" in its class
-      'div[class*="chat"]' // Any div with "chat" in its class
+      '.dad65929', // The selector from the original code
     ];
     
     let conversationContainer = null;
@@ -111,7 +103,8 @@ async function exportConversation() {
         logging: true, // Enable logging for debugging
         allowTaint: true,
         scrollX: 0,
-        scrollY: 0
+        scrollY: 0,
+        width: 1000,
       });
       
       // Remove loading indicator
