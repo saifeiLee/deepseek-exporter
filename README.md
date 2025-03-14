@@ -32,15 +32,6 @@ A Chrome extension that allows you to export conversations from the Deepseek web
 
 ## Troubleshooting
 
-### "Failed to load html2canvas" Error
-
-If you encounter this error, it means the extension couldn't load the html2canvas library. This can happen due to network issues or content security policies. The extension includes a local copy of html2canvas, but if you're still experiencing issues, try these solutions:
-
-1. Make sure you have a stable internet connection
-2. Reload the Deepseek chat page
-3. Reinstall the extension
-4. Check if your browser has any extensions that might be blocking script loading
-
 ### Other Issues
 
 If you encounter any other issues:
@@ -69,4 +60,4 @@ MIT
 
 ## Credits
 
-Created by [Your Name]
+Created by Walter Mitty with Cursor.
