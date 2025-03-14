@@ -4,7 +4,9 @@
   "description": "Chrome extension to export Deepseek conversations as images",
   "main": "content.js",
   "scripts": {
-    "convert-icons": "node convert.js"
+    "convert-icons": "node convert.js",
+    "build": "webpack --config webpack.config.js",
+    "watch": "webpack --watch --config webpack.config.js"
   },
   "keywords": [
     "chrome-extension",
@@ -15,6 +17,17 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
-    "sharp": "^0.33.2"
+    "@babel/core": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
+    "babel-loader": "^9.1.3",
+    "copy-webpack-plugin": "^12.0.2",
+    "css-loader": "^6.10.0",
+    "sharp": "^0.33.2",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "html2canvas": "^1.4.1"
   }
 } 

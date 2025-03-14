@@ -1,3 +1,6 @@
+// Import html2canvas
+import html2canvas from 'html2canvas';
+
 // Main function to initialize the extension
 function initDeepseekExporter() {
   console.log('Deepseek Exporter initialized');
@@ -92,22 +95,6 @@ async function exportConversation() {
       // If we still can't find it, try to find the main content area
       conversationContainer = document.querySelector('main') || document.body;
       console.log('Using fallback container:', conversationContainer);
-    }
-    
-    // Import html2canvas directly
-    const html2canvasScript = document.createElement('script');
-    html2canvasScript.src = chrome.runtime.getURL('html2canvas.min.js');
-    
-    // Wait for the script to load
-    await new Promise((resolve, reject) => {
-      html2canvasScript.onload = resolve;
-      html2canvasScript.onerror = () => reject(new Error('Failed to load html2canvas'));
-      document.head.appendChild(html2canvasScript);
-    });
-    
-    // Make sure html2canvas is now available
-    if (typeof html2canvas === 'undefined') {
-      throw new Error('html2canvas is not defined after loading');
     }
     
     // Show loading indicator
