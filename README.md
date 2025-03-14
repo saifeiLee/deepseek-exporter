@@ -9,6 +9,11 @@ A Chrome extension that allows you to export conversations from the DeepSeek web
 - Preview images before downloading
 - Works with the web version of DeepSeek at chat.deepseek.com
 
+## Usage screenshot
+
+![Usage screenshot](./docs/screenshot-1.jpeg)
+![Usage screenshot](./docs/screenshot-2.jpeg)
+
 ## Installation
 
 ### From Source (Developer Mode)
