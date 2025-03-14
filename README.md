@@ -59,6 +59,12 @@ This extension uses:
 4. Run `npm run convert-icons` to convert SVG icons to PNG format
 5. Load the extension in Chrome as described in the Installation section
 
+### Build for distribution
+
+1. Run `npm run build` to build the extension
+2. Run `npm run zip` to zip the extension
+3. The zip file will be saved as `deepseek-exporter.zip` in the root directory
+
 ## License
 
 MIT

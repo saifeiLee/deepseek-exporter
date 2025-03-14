@@ -6,7 +6,8 @@
   "scripts": {
     "convert-icons": "node convert.js",
     "build": "webpack --config webpack.config.js",
-    "watch": "webpack --watch --config webpack.config.js"
+    "watch": "webpack --watch --config webpack.config.js",
+    "zip": "zip -r deepseek-exporter.zip dist"
   },
   "keywords": [
     "chrome-extension",
