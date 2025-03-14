@@ -1,13 +1,13 @@
-# Deepseek Exporter
+# DeepSeek Exporter
 
-A Chrome extension that allows you to export conversations from the Deepseek web interface as images.
+A Chrome extension that allows you to export conversations from the DeepSeek web interface as images.
 
 ## Features
 
-- Export your Deepseek conversations as high-quality PNG images
-- Simple one-click export button added to the Deepseek interface
+- Export your DeepSeek conversations as high-quality PNG images
+- Simple one-click export button added to the DeepSeek interface
 - Preview images before downloading
-- Works with the web version of Deepseek at chat.deepseek.com
+- Works with the web version of DeepSeek at chat.deepseek.com
 
 ## Installation
 
@@ -25,7 +25,7 @@ A Chrome extension that allows you to export conversations from the Deepseek web
 
 ## Usage
 
-1. Navigate to [Deepseek Chat](https://chat.deepseek.com/)
+1. Navigate to [DeepSeek Chat](https://chat.deepseek.com/)
 2. You'll see an "Export as Image" button in the header
 3. Click the button to capture the current conversation
 4. Preview the image and click "Download" to save it to your computer

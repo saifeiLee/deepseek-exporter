@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Deepseek Exporter",
+  "name": "DeepSeek Exporter",
   "version": "1.0.0",
-  "description": "Export Deepseek conversations as images",
+  "description": "Export DeepSeek conversations as images",
   "icons": {
     "16": "icons/icon16.png",
     "48": "icons/icon48.png",

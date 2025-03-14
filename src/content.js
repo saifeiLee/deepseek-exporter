@@ -3,9 +3,9 @@ import html2canvas from 'html2canvas';
 
 // Main function to initialize the extension
 function initDeepseekExporter() {
-  console.log('Deepseek Exporter initialized');
+  console.log('DeepSeek Exporter initialized');
   
-  // Check if we're on the Deepseek chat page
+  // Check if we're on the DeepSeek chat page
   if (!window.location.href.includes('chat.deepseek.com')) {
     return;
   }
@@ -24,7 +24,7 @@ function initDeepseekExporter() {
   });
 }
 
-// Function to add the export button to the Deepseek UI
+// Function to add the export button to the DeepSeek UI
 function addExportButton() {
   // Wait for the chat interface to load
   const checkInterval = setInterval(() => {
