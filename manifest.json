@@ -17,8 +17,7 @@
     }
   },
   "permissions": [
-    "activeTab",
-    "scripting"
+    "activeTab"
   ],
   "host_permissions": [
     "https://chat.deepseek.com/*"
