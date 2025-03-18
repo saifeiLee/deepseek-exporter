@@ -142,6 +142,16 @@ function createLoadingIndicator() {
   return loadingContainer;
 }
 
+function getConversationName() {
+  const conversationHeaderClass = '.d8ed659a'
+  const conversationHeader = document.querySelector(conversationHeaderClass);
+  if (conversationHeader) {
+    const conversationName = conversationHeader.textContent.trim();
+    return conversationName;
+  }
+  return null;
+}
+
 // Function to show the image preview
 function showImagePreview(canvas) {
   // Create a container for the preview
@@ -186,12 +196,17 @@ function showImagePreview(canvas) {
   img.src = canvas.toDataURL('image/png');
   img.className = 'deepseek-export-preview-image';
   previewContainer.querySelector('.deepseek-export-preview-image-container').appendChild(img);
+  let fileName = getConversationName();
+  console.log('fileName', fileName);
+  if (!fileName) {
+    fileName = 'deepseek-conversation';
+  }
   
   // Add event listener to download button
   const downloadBtn = previewContainer.querySelector('.deepseek-export-preview-download');
   downloadBtn.addEventListener('click', () => {
     const link = document.createElement('a');
-    link.download = `deepseek-conversation-${new Date().toISOString().slice(0, 10)}.png`;
+    link.download = `${fileName}-${new Date().toISOString().slice(0, 10)}.png`;
     link.href = canvas.toDataURL('image/png');
     link.click();
   });
