@@ -1,0 +1,33 @@
+{
+  "name": "@extension/i18n",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/index.js",
+  "files": [
+    "dist/**"
+  ],
+  "types": "index.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "private": true,
+  "sideEffects": false,
+  "scripts": {
+    "clean:bundle": "rimraf dist",
+    "clean:node_modules": "pnpx rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
+    "clean": "pnpm clean:bundle && pnpm clean:node_modules && pnpm clean:turbo",
+    "ready": "npm run build",
+    "build": "node build.mjs",
+    "lint": "eslint . --ext .ts,.tsx",
+    "lint:fix": "pnpm lint --fix",
+    "prettier": "prettier . --write --ignore-path ../../.prettierignore",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@extension/tsconfig": "workspace:*"
+  },
+  "dependencies": {
+    "i18next": "^24.2.3"
+  }
+}
