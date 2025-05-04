@@ -44,4 +44,10 @@ function initReloadServer() {
       }
     });
   });
+
+  wss.on("error", (error) => {
+    console.error(`[HMR] Server error: ${error}`);
+  });
 }
+
+initReloadServer();
