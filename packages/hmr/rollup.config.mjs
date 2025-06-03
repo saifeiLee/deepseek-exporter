@@ -7,9 +7,21 @@ const plugins = [
     })
 ]
 
-export default {
+export default [
     {
         plugins,
-        // input:
+        input: 'lib/injections/reload.ts',
+        output: {
+            format: 'iife',
+            file: 'build/injections/reload.tss',
+        },
+    },
+    {
+        plugins,
+        input: 'lib/injections/refresh.ts',
+        output: {
+            format: 'iife',
+            file: 'build/injections/refresh.js'
+        }
     }
-}
+]
