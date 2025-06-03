@@ -1,0 +1,28 @@
+{
+  "name": "chrome-extension",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "clean:node_modules": "pnpx rimraf node_modules",
+    "clean:turbo": "rimraf .turbo",
+    "clean": "pnpm clean:turbo && pnpm clean:node_modules",
+    "build": "vite build",
+    "dev": "cross-env __DEV__=true vite build --mode development",
+    "test": "vitest run",
+    "lint": "eslint ./ --ext .ts,.js,.tsx,.jsx",
+    "lint:fix": "pnpm lint --fix",
+    "prettier": "prettier . --write --ignore-path ../.prettierignore",
+    "type-check": "tsc --noEmit"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "webextension-polyfill": "^0.12.0",
+    "@extension/i18n": "workspace:*"
+  },
+  "devDependencies": {
+    "@extension/tsconfig": "workspace:*"
+  }
+}
