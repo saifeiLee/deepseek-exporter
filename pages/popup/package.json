@@ -2,10 +2,8 @@
   "name": "@extension/popup",
   "version": "1.0.0",
   "description": "chrome extension - popup page",
-  "main": "./dist/index.js",
   "private": true,
   "sideEffects": true,
-  "types": "index.ts",
   "files": [
     "dist/**"
   ],
