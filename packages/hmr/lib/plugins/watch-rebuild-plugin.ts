@@ -2,9 +2,9 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Plugin, PluginOption } from "vite";
 import { WebSocket } from "ws";
-import MessageInterpreter from "lib/interpreter";
+import MessageInterpreter from "../interpreter";
 import { MESSAGE, LOCAL_RELOAD_SOCKET_URL } from "../constant";
-import type { PluginConfig } from "lib/types";
+import type { PluginConfig } from "../types";
 
 const injectionsPath = path.resolve(
   __dirname,

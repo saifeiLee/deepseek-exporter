@@ -4,8 +4,8 @@ import {
   MESSAGE,
   LOCAL_RELOAD_SOCKET_PORT,
   LOCAL_RELOAD_SOCKET_URL,
-} from "lib/constant";
-import MessageInterpreter from "lib/interpreter";
+} from "../constant";
+import MessageInterpreter from "../interpreter";
 
 const clientsThatNeedToUpdate: Set<WebSocket> = new Set();
 

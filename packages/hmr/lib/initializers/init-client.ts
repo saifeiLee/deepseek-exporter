@@ -1,6 +1,5 @@
-import { MESSAGE, LOCAL_RELOAD_SOCKET_URL } from "lib/constant";
-import type { MessageType } from "lib/types";
-import MessageInterpreter from "lib/interpreter";
+import { MESSAGE, LOCAL_RELOAD_SOCKET_URL } from "../constant";
+import MessageInterpreter from "../interpreter";
 
 interface InitClientOptions {
   id: string;
