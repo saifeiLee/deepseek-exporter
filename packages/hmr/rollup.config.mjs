@@ -13,7 +13,7 @@ export default [
         input: 'lib/injections/reload.ts',
         output: {
             format: 'iife',
-            file: 'build/injections/reload.tss',
+            file: 'build/injections/reload.js',
         },
     },
     {
