@@ -142,6 +142,9 @@ importers:
         specifier: ^0.12.0
         version: 0.12.0
     devDependencies:
+      '@extension/dev-utils':
+        specifier: workspace:*
+        version: link:../packages/dev-utils
       '@extension/hmr':
         specifier: workspace:*
         version: link:../packages/hmr
