@@ -8,7 +8,7 @@ const packageJson = JSON.parse(fs.readFileSync('../package.json'))
  */
 const manifest = {
     manifest_version: 3,
-    default_locale: 'en',
+    // default_locale: 'en',
     name: 'Deepseek Exporter',
     version: packageJson.version,
     description: '__MSG_extensionDescription__',
@@ -34,7 +34,7 @@ const manifest = {
         {
             "matches": ["https://chat.deepseek.com/*"],
             "js": ["content.iife.js"],
-            // "css": ["content.css"]
+            "css": ["content.css"]
         }
     ]
 }
