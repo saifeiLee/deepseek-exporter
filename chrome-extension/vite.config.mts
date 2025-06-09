@@ -4,7 +4,7 @@ import libAssetsPlugin from "@laynezh/vite-plugin-lib-assets";
 import makeManifestPlugin from "./utils/plugins/make-manifest-plugin";
 import { watchPublicPlugin, watchRebuildPlugin } from "@extension/hmr";
 import { isDev, isProduction, watchOption } from "@extension/vite-config";
-import fs from 'node:fs'
+import fs from "node:fs";
 
 const rootDir = resolve(__dirname);
 const srcDir = resolve(rootDir, "src");
@@ -12,7 +12,15 @@ const srcDir = resolve(rootDir, "src");
 const outDir = resolve(rootDir, "..", "dist");
 
 // copy content.css to dist
-fs.copyFileSync(resolve(rootDir, "src/content/content.css"), resolve(outDir, "content.css"));
+console.log("rootDir:", rootDir);
+console.log("outDir:", outDir);
+if (!fs.existsSync(outDir)) {
+  fs.mkdirSync(outDir, { recursive: true });
+}
+fs.copyFileSync(
+  resolve(rootDir, "src/content/content.css"),
+  resolve(outDir, "content.css")
+);
 
 export default defineConfig({
   resolve: {
