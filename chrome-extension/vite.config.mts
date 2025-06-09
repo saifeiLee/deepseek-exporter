@@ -29,9 +29,9 @@ export default defineConfig({
   build: {
     lib: {
       formats: ["iife"],
-      entry: resolve(__dirname, "src/background/index.ts"),
-      name: "BackgroundScript",
-      fileName: "background",
+      entry: resolve(__dirname, "src/content/index.ts"),
+      name: "ContentScript",
+      fileName: "content",
     },
     outDir,
     emptyOutDir: false,
