@@ -28,7 +28,7 @@
   "content_scripts": [
     {
       "matches": ["https://chat.deepseek.com/*"],
-      "js": ["content.js"],
+      "js": ["content.iife.js"],
       "css": ["content.css"]
     }
   ]

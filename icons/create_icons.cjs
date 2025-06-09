@@ -9,7 +9,7 @@ const path = require('path');
 const createSvgIcon = (size) => `
 <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
   <rect width="${size}" height="${size}" rx="${size/8}" fill="#4285f4"/>
-  <path d="M${size*0.75} ${size*0.625}v${size*0.167}a${size*0.083} ${size*0.083} 0 0 1-${size*0.083} ${size*0.083}H${size*0.208}a${size*0.083} ${size*0.083} 0 0 1-${size*0.083}-${size*0.083}v-${size*0.167}" 
+  <path d="M${size*0.75} ${size*0.625}v${size*0.167}a${size*0.083} ${size*0.083} 0 0 1-${size*0.083} ${size*0.083}H${size/3}a${size*0.083} ${size*0.083} 0 0 1-${size*0.083}-${size*0.083}v-${size*0.167}" 
         stroke="white" stroke-width="${size*0.042}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   <polyline points="${size*0.292} ${size*0.417} ${size*0.5} ${size*0.625} ${size*0.708} ${size*0.417}" 
             stroke="white" stroke-width="${size*0.042}" fill="none" stroke-linecap="round" stroke-linejoin="round"/>

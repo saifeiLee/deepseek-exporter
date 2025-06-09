@@ -1,8 +1,8 @@
 {
   "name": "chrome-extension",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
     "clean:node_modules": "pnpx rimraf node_modules",
     "clean:turbo": "rimraf .turbo",

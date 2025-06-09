@@ -8,23 +8,23 @@ const packageJson = JSON.parse(fs.readFileSync('../package.json'))
  */
 const manifest = {
     manifest_version: 3,
-    default_locale: 'en',
+    // default_locale: 'en',
     name: 'Deepseek Exporter',
     version: packageJson.version,
     description: '__MSG_extensionDescription__',
     permissions: ['activeTab'],
     host_permissions: ['https://chat.deepseek.com/*'],
     "icons": {
-        "16": "icons/icon16.png",
-        "48": "icons/icon48.png",
-        "128": "icons/icon128.png"
+        "48": "icon48.png",
+        "16": "icon16.png",
+        "128": "icon128.png"
     },
     "action": {
-        "default_popup": "popup.html",
+        "default_popup": "popup/index.html",
         "default_icon": {
-            "16": "icons/icon16.png",
-            "48": "icons/icon48.png",
-            "128": "icons/icon128.png"
+            "16": "icon16.png",
+            "48": "icon48.png",
+            "128": "icon128.png"
         }
     },
     "content_security_policy": {
@@ -33,7 +33,7 @@ const manifest = {
     "content_scripts": [
         {
             "matches": ["https://chat.deepseek.com/*"],
-            "js": ["content.js"],
+            "js": ["content.iife.js"],
             "css": ["content.css"]
         }
     ]
