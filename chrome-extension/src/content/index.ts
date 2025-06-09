@@ -6,6 +6,18 @@ const conversationSelector = ".dad65929";
 
 function initializeExtension() {
   addExportButton();
+
+  chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+    if (message.action === "exportConversation") {
+      exportConversation()
+        .then((result) => sendResponse(result))
+        .catch((error) =>
+          sendResponse({ success: false, error: error.message })
+        );
+      return true; // Indicates we'll respond asynchronously
+    }
+    return false;
+  });
 }
 
 function addExportButton() {
