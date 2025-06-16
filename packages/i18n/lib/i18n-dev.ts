@@ -20,11 +20,14 @@ function translate(key: MessageKey, substitutions?: string | string[]) {
     return message;
   }
 
-  if (Array.isArray(substitutions) {
-    return substitutions.reduce((acc, cur, idx) => acc.replace(`$${idx + 1}`, cur), message);
+  if (Array.isArray(substitutions)) {
+    return substitutions.reduce(
+      (acc, cur, idx) => acc.replace(`$${idx + 1}`, cur),
+      message
+    );
   }
   // 单个字符串直接替换
-  return message.replace(/\$(\d+)/, substitutions)
+  return message.replace(/\$(\d+)/, substitutions);
 }
 
 function removePlaceholder(message: string) {
