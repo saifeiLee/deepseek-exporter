@@ -1,0 +1,46 @@
+{
+  "extensionDescription": {
+    "message": "Export DeepSeek conversations as images",
+    "description": "Deepseek exporter extension"
+  },
+  "popupTitle": {
+    "message": "DeepSeek Exporter",
+    "description": "Title of popup page"
+  },
+  "popupDescription": {
+    "message": "Export your DeepSeek conversations as images",
+    "description": "Description of popup page"
+  },
+  "exportButton": {
+    "message": "Export Current Conversation",
+    "description": "Button to export current conversation"
+  },
+  "exporting": {
+    "message": "Exporting conversation...",
+    "description": "Message to show when exporting conversation"
+  },
+  "success": {
+    "message": "Conversation exported successfully!",
+    "description": "Message to show when conversation is exported successfully"
+  },
+  "error": {
+    "message": "Error: $1",
+    "description": "Message to show when there is an error"
+  },
+  "contentExportButton": {
+    "message": "Export as Image",
+    "description": "Button to export as image"
+  },
+  "contentLoading": {
+    "message": "Exporting...",
+    "description": "Message to show when exporting"
+  },
+  "contentDownloadButton": {
+    "message": "Download",
+    "description": "Button to download"
+  },
+  "contentCloseButton": {
+    "message": "Close",
+    "description": "Button to close"
+  }
+}
