@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
-import i18n from "@extension/i18n";
+import { t } from "@extension/i18n";
 import "./Popup.css";
 
 export default function Popup() {
   const [statusText, setStatusText] = useState("");
   const handleExportBtnClick = async () => {
-    setStatusText("正在导出...");
+    setStatusText(t("exporting"));
     const [tab] = await chrome.tabs.query({
       active: true,
       currentWindow: true,
@@ -16,18 +16,18 @@ export default function Popup() {
         action: "exportConversation",
       });
       if (result.success) {
-        setStatusText("导出成功");
+        setStatusText(t("success"));
       } else {
-        setStatusText("导出失败");
+        setStatusText(t("error"));
       }
     }
   };
   return (
     <div className="container">
-      <h1 id="title">{i18n.t("popup.title")}</h1>
-      <p id="description">Export your DeepSeek conversations as images</p>
+      <h1 id="title">{t("popupTitle")}</h1>
+      <p id="description">{t("popupDescription")}</p>
       <button id="exportBtn" onClick={handleExportBtnClick}>
-        Export Current Conversation
+        {t("exportButton")}
       </button>
       <div id="status">{statusText}</div>
     </div>
