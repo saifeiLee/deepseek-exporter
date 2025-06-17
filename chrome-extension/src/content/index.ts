@@ -38,22 +38,16 @@ function addExportButton() {
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          ${t("exportButton")}
         `;
-
+      exportButton.title = t("exportButton");
       // Add click event listener
       exportButton.addEventListener("click", () => {
         exportConversation();
       });
 
-      // Find a suitable place to add the button
-      const headerElement = document.querySelector(".be88ba8a");
-      if (headerElement) {
-        headerElement.appendChild(exportButton);
-      } else {
-        // Fallback: add to the top of the chat container
-        const firstChild = chatContainer.firstChild;
-        chatContainer.insertBefore(exportButton, firstChild);
+      const chatOptionsContainer = document.querySelector(".ec4f5d61");
+      if (chatOptionsContainer) {
+        chatOptionsContainer.appendChild(exportButton);
       }
     }
   }, 1000);
