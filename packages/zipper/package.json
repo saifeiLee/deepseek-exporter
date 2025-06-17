@@ -1,25 +1,22 @@
 {
-  "name": "@extension/i18n",
+  "name": "@extension/zipper",
   "version": "0.0.2",
-  "description": "chrome extension - internationalization",
-  "main": "./dist/index.js",
+  "description": "chrome extension - zipper",
+  "private": true,
+  "sideEffects": false,
   "files": [
     "dist/**"
   ],
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "types": "index.ts",
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "private": true,
-  "sideEffects": false,
   "scripts": {
     "clean:bundle": "rimraf dist",
     "clean:node_modules": "pnpx rimraf node_modules",
     "clean:turbo": "rimraf .turbo",
     "clean": "pnpm clean:bundle && pnpm clean:node_modules && pnpm clean:turbo",
-    "generate-i8n": "node generate-i18n.mjs",
-    "ready": "pnpm generate-i8n && node build.dev.mjs",
-    "build": "pnpm generate-i8n && node build.prod.mjs",
+    "zip": "tsx index.ts",
+    "ready": "tsc",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "pnpm lint --fix",
     "prettier": "prettier . --write --ignore-path ../../.prettierignore",
@@ -27,6 +24,11 @@
   },
   "devDependencies": {
     "@extension/tsconfig": "workspace:*",
-    "@extension/hmr": "workspace:*"
-  }
+    "fast-glob": "^3.3.2",
+    "fflate": "^0.8.2",
+    "tsx": "^4.19.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }

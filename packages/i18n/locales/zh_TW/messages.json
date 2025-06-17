@@ -1,0 +1,46 @@
+{
+    "extensionDescription": {
+        "message": "將DeepSeek對話導出為圖片",
+        "description": "Deepseek exporter extension"
+    },
+    "popupTitle": {
+        "message": "DeepSeek Exporter",
+        "description": "Title of popup page"
+    },
+    "popupDescription": {
+        "message": "導出你的DeepSeek對話為圖片",
+        "description": "Popup page description"
+    },
+    "exportButton": {
+        "message": "導出當前對話",
+        "description": "Button to export current conversation"
+    },
+    "exporting": {
+        "message": "導出對話中...",
+        "description": "Message to show when exporting conversation"
+    },
+    "success": {
+        "message": "對話導出成功！",
+        "description": "Message to show when conversation is exported successfully"
+    },
+    "error": {
+        "message": "錯誤：$1",
+        "description": "Message to show when there is an error"
+    },
+    "contentExportButton": {
+        "message": "導出為圖片",
+        "description": "Button to export as image"
+    },
+    "contentLoading": {
+        "message": "導出中...",
+        "description": "Message to show when exporting"
+    },
+    "contentDownloadButton": {
+        "message": "下載",
+        "description": "Button to download"
+    },
+    "contentCloseButton": {
+        "message": "關閉",
+        "description": "Button to close"
+    }
+}

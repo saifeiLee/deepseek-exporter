@@ -1,7 +1,7 @@
 {
   "name": "chrome-extension",
   "version": "0.0.2",
-  "description": "",
+  "description": "__MSG_extensionDescription__",
   "type": "module",
   "scripts": {
     "clean:node_modules": "pnpx rimraf node_modules",

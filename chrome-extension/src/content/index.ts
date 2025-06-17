@@ -1,6 +1,6 @@
 import "webextension-polyfill";
 import html2canvas from "html2canvas";
-import i18n from "@extension/i18n";
+import { t } from "@extension/i18n";
 
 const conversationSelector = ".dad65929";
 
@@ -38,22 +38,16 @@ function addExportButton() {
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          ${i18n.t("content.exportButton")}
         `;
-
+      exportButton.title = t("exportButton");
       // Add click event listener
       exportButton.addEventListener("click", () => {
         exportConversation();
       });
 
-      // Find a suitable place to add the button
-      const headerElement = document.querySelector(".be88ba8a");
-      if (headerElement) {
-        headerElement.appendChild(exportButton);
-      } else {
-        // Fallback: add to the top of the chat container
-        const firstChild = chatContainer.firstChild;
-        chatContainer.insertBefore(exportButton, firstChild);
+      const chatOptionsContainer = document.querySelector(".ec4f5d61");
+      if (chatOptionsContainer) {
+        chatOptionsContainer.appendChild(exportButton);
       }
     }
   }, 1000);
@@ -126,9 +120,7 @@ function createLoadingIndicator() {
   loadingContainer.className = "deepseek-export-loading";
   loadingContainer.innerHTML = `
       <div class="deepseek-export-loading-spinner"></div>
-      <div class="deepseek-export-loading-text">${i18n.t(
-        "content.loading"
-      )}</div>
+      <div class="deepseek-export-loading-text">${t("exporting")}</div>
     `;
   return loadingContainer;
 }
@@ -169,7 +161,7 @@ function showImagePreview(canvas) {
               <polyline points="7 10 12 15 17 10"></polyline>
               <line x1="12" y1="15" x2="12" y2="3"></line>
             </svg>
-            ${i18n.t("content.downloadButton")}
+            ${t("contentDownloadButton")}
           </button>
         </div>
       </div>
@@ -182,7 +174,7 @@ function showImagePreview(canvas) {
   closeButton?.addEventListener("click", () => {
     document.body.removeChild(previewContainer);
   });
-  closeButton?.setAttribute("title", i18n.t("content.closeButton"));
+  closeButton?.setAttribute("title", t("contentCloseButton"));
 
   // Add the canvas as an image
   const img = document.createElement("img");
